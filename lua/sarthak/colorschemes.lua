@@ -1,4 +1,4 @@
-local colorscheme = "darkplus"
+local colorscheme = "gruvbox"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
@@ -6,3 +6,8 @@ if not status_ok then
   return
 end
 
+-- dark,
+-- require('onedark').setup {
+--     style = 'dark'
+-- }
+-- require('onedark').load()
