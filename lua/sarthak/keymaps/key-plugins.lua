@@ -33,7 +33,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- x, c, p : cut, copy paste
 -- y, gy : copy name, copy absolute path
 -- W, E : collapse all, expand all
--- Tab : to view
+-- Tab : preview the files without leaving the left hand side. If you use something like l,o,w then you will be put to the right hand side
 
 -- bufferline
 -- Navigate buffers
@@ -52,3 +52,11 @@ keymap("n", "<leader>w", ":Bdelete!<CR>", opts) -- won't work without https://gi
 -- comments
 -- gc : Toggles the region using linewise comment
 -- gb : Toggles the region using blockwise comment
+
+
+
+-- ##########################################################################################
+-- Insert mode
+-- telescope
+-- <leader>f to close the prompt, trying to make <leader>f as toggle
+-- It only works when you are in insert mode ins the telescope prompt

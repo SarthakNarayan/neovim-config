@@ -1,0 +1,4 @@
+- How to delete to trash instead of permanently deleting using nvim-tree d
+- LSP not configured properly
+- Null ls not configured
+- Give snippets a try and move buffer completions to the bottom

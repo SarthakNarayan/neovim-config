@@ -19,7 +19,9 @@ telescope.setup {
     -- default key bindings are always there this is just for overriding them
     mappings = {
       -- key bindings in insert mode
-      -- i = {}
+      i = {
+        ["<leader>f"] = actions.close,
+      },
 
       -- key bindings in normal mode
       n = {
