@@ -63,4 +63,4 @@ nvim_tree.setup {
       number = false,
       relativenumber = false,
     },
-  }
+}
