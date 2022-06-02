@@ -17,6 +17,7 @@ telescope.setup {
     path_display = { "smart" },
 
     -- default key bindings are always there this is just for overriding them
+    -- update the documentation in key-plugins.lua also for reference
     mappings = {
       -- key bindings in insert mode
       i = {
@@ -26,7 +27,7 @@ telescope.setup {
       -- key bindings in normal mode
       n = {
         -- ["<esc>"] = actions.close,
-        ["<leader>w"] = actions.close,
+        ["q"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["j"] = actions.move_selection_next,
         ["k"] = actions.move_selection_previous,

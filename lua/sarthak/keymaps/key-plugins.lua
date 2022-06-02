@@ -19,8 +19,8 @@ keymap("n", "<leader>r", "<cmd>Telescope live_grep<cr>", opts) --ripgrep must be
 
 -- telescope
 -- All the basic stuff, can be found in telescope.lua file
--- <leader>w (similar to cmd + w): to close the prompy instead of escape if you decide you don't want to make a selection 
--- Thought of using <C-c> but wasn't very friendly
+-- Use q - after going to normal mode 
+-- Thought of using <C-c> and <leader>w (similar to cmd + w) but wasn't very friendly
 
 -- nvim-tree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
@@ -59,4 +59,4 @@ keymap("n", "<leader>w", ":Bdelete!<CR>", opts) -- won't work without https://gi
 -- Insert mode
 -- telescope
 -- <leader>f to close the prompt, trying to make <leader>f as toggle
--- It only works when you are in insert mode ins the telescope prompt
+-- It only works when you are in insert mode in the telescope prompt
