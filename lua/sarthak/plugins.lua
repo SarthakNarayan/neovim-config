@@ -54,12 +54,12 @@ return packer.startup(function(use)
   use "hrsh7th/nvim-cmp" -- The completion plugin
   -- completions
   use "hrsh7th/cmp-buffer" -- buffer completions
-  -- use "hrsh7th/cmp-cmdline" -- cmdline completions
-  -- use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp" -- lsp completions
 
-  -- although we won't be using snippets, engine is compulsory in the setup of cmp.lua file
+  -- luasnip engine, compulsory in the setup of cmp.lua file
   use "L3MON4D3/LuaSnip" -- snippet engine required for completion
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP 
@@ -104,6 +104,18 @@ return packer.startup(function(use)
 
   -- toggle term
   use "akinsho/toggleterm.nvim"
+
+  -- vim notify
+  use "rcarriga/nvim-notify"
+
+  -- impatient
+  use 'lewis6991/impatient.nvim'
+
+  -- indent line
+  use "lukas-reineke/indent-blankline.nvim"
+
+  -- alpha startup
+  use "goolord/alpha-nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

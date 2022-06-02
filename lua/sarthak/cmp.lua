@@ -60,10 +60,11 @@ cmp.setup {
   -- key mappings
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(), -- move up in menu
+    ["<Tab>"] = cmp.mapping.select_next_item(), -- move down in menu 
 		["<C-j>"] = cmp.mapping.select_next_item(), -- move down in menu
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- bring up suggestions
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
@@ -85,7 +86,7 @@ cmp.setup {
       -- this tells the source of completion, good to have and updated when a new source is added
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
-        -- luasnip = "[Snippet]",
+        luasnip = "[Snippet]",
         buffer = "[Buffer]",
       })[entry.source.name]
       return vim_item
@@ -97,8 +98,8 @@ cmp.setup {
   -- order in which keep them matters decreasing from top to bottom
   sources = {
     { name = "nvim_lsp" },
-    { name = "buffer" }, -- this is also pretty annoying
-    -- { name = "luasnip" }, I don't use snippets
+    { name = "luasnip" },
+    { name = "buffer" }, 
   },
 
   confirm_opts = {
@@ -117,3 +118,4 @@ cmp.setup {
     native_menu = false,
   },
 }
+

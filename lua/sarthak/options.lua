@@ -7,13 +7,8 @@ local set = vim.opt
 -- more space in the neovim command line (at the bottom) for displaying messages. Default is 1
 -- vim.opt.cmdheight = 2
 
--- Insert mode completion using tab
-vim.opt.completeopt = { "menuone", "noselect" } 
-
--- so that `` is visible in markdown files
-vim.opt.conceallevel = 0
-
--- the encoding written to a file
+vim.opt.completeopt = { "menuone", "noselect" } -- Insert mode completion using tab
+vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8"                  
 
 -- highlight all matches on previous search pattern
@@ -60,6 +55,9 @@ vim.opt.signcolumn = "yes"                      -- always show the sign column, 
 
 -- wrap long text
 vim.opt.wrap = true                            
+
+-- disable tilde on end of buffer
+vim.opt.fillchars = { eob = " " }
 
 -- scroll automatically when nearing the end of screen
 vim.opt.scrolloff = 10                           
