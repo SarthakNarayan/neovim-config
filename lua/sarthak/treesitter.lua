@@ -6,6 +6,7 @@ if not status_ok then
   return
 end
 
+
 configs.setup {
   ensure_installed = "all",
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
@@ -20,7 +21,7 @@ configs.setup {
   },
   indent = { enable = true, disable = { "yaml" } },
 
-  -- rainbow highlighting plugin
+  -- rainbow brackets highlighting plugin
   rainbow = {
     enable = true,
     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
@@ -30,3 +31,4 @@ configs.setup {
     -- termcolors = {} -- table of colour name strings
   },
 }
+

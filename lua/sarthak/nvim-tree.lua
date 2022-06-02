@@ -13,7 +13,7 @@ if not config_status_ok then
 end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
-  
+
 nvim_tree.setup {
     disable_netrw = true,
     hijack_netrw = true,
@@ -34,16 +34,6 @@ nvim_tree.setup {
       auto_open = true,
     },
 
-    diagnostics = {
-      enable = false,
-      icons = {
-        hint = "",
-        info = "",
-        warning = "",
-        error = "",
-      },
-    },
-
     update_focused_file = {
       enable = true,
       update_cwd = true,
@@ -51,7 +41,7 @@ nvim_tree.setup {
     },
 
     git = {
-      enable = true,
+      enable = false,
       ignore = true,
       timeout = 500,
     },
