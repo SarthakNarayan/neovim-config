@@ -60,17 +60,21 @@ cmp.setup {
   -- key mappings
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(), -- move up in menu
-    ["<Tab>"] = cmp.mapping.select_next_item(), -- move down in menu 
+    ["<Tab>"] = cmp.mapping.select_next_item(), -- move down in menu
 		["<C-j>"] = cmp.mapping.select_next_item(), -- move down in menu
-    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+
+    -- scrolling through the docs that open on the righ side, can also be scrolled using mouse
+    ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- bring up suggestions
-    ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+
+    -- no idea what this does
+    -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }, -- close the menu
-    
+
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = true },

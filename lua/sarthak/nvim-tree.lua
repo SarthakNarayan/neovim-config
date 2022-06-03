@@ -46,6 +46,11 @@ nvim_tree.setup {
       timeout = 500,
     },
 
+    trash = {
+        cmd = "trash",
+        require_confirm = true,
+      },
+
     view = {
       width = 30,
       height = 30,
@@ -58,6 +63,11 @@ nvim_tree.setup {
           { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
           { key = "h", cb = tree_cb "close_node" },
           { key = "v", cb = tree_cb "vsplit" },
+
+          -- to remove deletion using d
+          -- use D to delete, it will trash the files in mac, trash must be installed
+          -- brew install trash
+          { key = "d", action = "" }, 
         },
       },
       number = false,

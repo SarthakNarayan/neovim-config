@@ -1,6 +1,6 @@
 require 'sarthak.options'
 require 'sarthak.keymaps'
-require 'sarthak.plugins.plugins'
+require 'sarthak.plugins-config.plugins'
 require 'sarthak.colorschemes'
 require 'sarthak.cmp'
 require 'sarthak.lsp'

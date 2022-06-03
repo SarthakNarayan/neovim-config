@@ -1,9 +1,0 @@
-Help for commands for plugins so that you don't have to look them up in the internet
-
-## Treesitter
-- TSBufDisable highlight : to disable highlighting
-- TSBufEnable highlight : to enable highlighting 
-  - Mapped to (<leader>rh) so that it can be used if something goes wrong
-- TSBufToggle highlight : to toggle highlighting
-- If push comes to shove use this ":write | edit | TSBufEnable highlight"
-- Link to documentation : https://github.com/nvim-treesitter/nvim-treesitter

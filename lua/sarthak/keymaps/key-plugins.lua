@@ -14,7 +14,7 @@ keymap("", ",", "<Nop>", opts)
 -- more information in the cmp.lua file
 
 -- Treesitter
-keymap("n", "<leader>rh", "<cmd>TSBufEnable highlight<cr>", opts) 
+-- keymap("n", "<leader>rh", "<cmd>TSBufEnable highlight<cr>", opts) -- disabled since it was slowing down ripgrep
 -- enable highlighting if something goes wrong. rh stands for rehighlight
 
 
@@ -39,7 +39,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- l,o : open the file (same as enter) - mapping in nvim-tree.lua
 -- useful defaults
 -- R, S, H : Refresh, Search, Toggle Hidden files
--- a, d/D, r : Create (leaving a / will add a directory), Remove/Trash a file, Rename file/directories
+-- a, d/D, r : Create (leaving a / will add a directory), disabled/trash a file (brew install trash) (on mac), Rename file/directories
 -- x, c, p : cut, copy paste
 -- y, gy : copy name, copy absolute path
 -- W, E : collapse all, expand all
@@ -50,6 +50,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- keymap("n", "<leader>l", ":bnext<CR>", opts)
 -- keymap("n", "<leader>h", ":bprevious<CR>", opts)
 keymap("n", "<Tab>", ":bnext<CR>", opts)
+keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 -- :q closes the window and not the buffer
 keymap("n", "<leader>w", ":Bdelete!<CR>", opts) -- won't work without https://github.com/moll/vim-bbye plugin
 
