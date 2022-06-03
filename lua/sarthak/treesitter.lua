@@ -1,5 +1,19 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter
 
+local languages = {
+  "lua",
+  "java",
+  "typescript", "javascript",
+  "html", "css",
+  "python",
+  "go", "gomod", "proto",
+  "dockerfile",
+  "bash",
+  "cpp",
+  "http",
+  "jsdoc", "json", "json5",
+}
+
 local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
   vim.notify("ERROR: Treesitter Plugin - lua/sarthak/treesitter.lua")
@@ -8,7 +22,7 @@ end
 
 
 configs.setup {
-  ensure_installed = "all",
+  ensure_installed = languages,
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
   autopairs = {

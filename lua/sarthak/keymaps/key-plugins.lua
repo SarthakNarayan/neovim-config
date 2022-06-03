@@ -13,6 +13,11 @@ keymap("", ",", "<Nop>", opts)
 -- ctrl + space for trigger and ctrl + e to close 
 -- more information in the cmp.lua file
 
+-- Treesitter
+keymap("n", "<leader>rh", "<cmd>TSBufEnable highlight<cr>", opts) 
+-- enable highlighting if something goes wrong. rh stands for rehighlight
+
+
 -- telescope keymaps
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts) -- preview
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts) -- no preview
