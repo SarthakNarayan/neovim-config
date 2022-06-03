@@ -1,5 +1,7 @@
 require 'sarthak.options'
 require 'sarthak.keymaps'
+
+-- plugins
 require 'sarthak.plugins-config.plugins'
 require 'sarthak.colorschemes'
 require 'sarthak.cmp'
@@ -11,7 +13,7 @@ require 'sarthak.comments'
 require 'sarthak.gitsigns'
 require 'sarthak.nvim-tree'
 require 'sarthak.bufferline'
-require 'sarthak.lualine-evil'
+require 'sarthak.lualine.lualine-evil'
 require 'sarthak.toggleterm'
 require 'sarthak.indentline'
 require 'sarthak.alpha'

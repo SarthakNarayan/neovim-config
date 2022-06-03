@@ -1,3 +1,5 @@
+-- Remember telescope is just a fuzzy finder
+
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
   vim.notify("ERROR: LSP Plugin - lua/sarthak/telescope.lua")
@@ -6,6 +8,7 @@ end
 
 -- loading extensions
 -- telescope.load_extension('media_files') -- preview media files in telescope
+-- telescope.load_extension('notify') -- if you want to filter notify using telescope
 
 local actions = require "telescope.actions"
 
@@ -53,3 +56,6 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+
+-- ignoring file patterns
+-- require('telescope').setup{  defaults = { file_ignore_patterns = { "node_modules" }} }

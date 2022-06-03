@@ -41,7 +41,7 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- My own
--- Go to end and beginning of the line using H and L. 
+-- Go to end and beginning of the line using H and L.
 -- S stands for Shift
 keymap("n", "<S-h>", "^", opts)
 keymap("n", "<S-l>", "$", opts)
@@ -62,7 +62,6 @@ keymap("n","N","Nzz",opts)
 keymap("n","j","gj",opts)
 keymap("n","k","gk",opts)
 
--- toggling folding
 
 
 -- ##########################################################################################
@@ -87,3 +86,14 @@ keymap("v", "<S-j>", "10j", opts)
 keymap("v", "<S-l>", "$", opts)
 keymap("v", "<S-h>", "^", opts)
 
+-- remap esc in visual mode, you can either use this or press v 1 or 2 times depending on the visual or visual block mode
+keymap("v", "<leader>jk", "<ESC>", opts)
+
+
+
+-- ##########################################################################################
+-- Command Mode --
+-- Escape from command mode using jk
+-- In command mode mappings to esc run the command for some odd historical vi compatibility reason. 
+-- We use the alternate method of existing which is Ctrl-C
+keymap("c", "jk", "<C-c>", opts)
