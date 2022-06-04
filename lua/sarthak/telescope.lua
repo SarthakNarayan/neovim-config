@@ -10,6 +10,7 @@ end
 -- telescope.load_extension('media_files') -- preview media files in telescope
 -- telescope.load_extension('notify') -- if you want to filter notify using telescope
 require('telescope').load_extension('fzf') -- enable native fzf for telescope
+require('telescope').load_extension('neoclip')
 
 -- ########################## SHORTCUTS ##########################
 vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files)
