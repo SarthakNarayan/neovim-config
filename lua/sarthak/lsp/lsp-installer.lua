@@ -8,10 +8,13 @@ end
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
 	local opts = {
-		on_attach = require("sarthak.lsp.handlers").on_attach,
-		capabilities = require("sarthak.lsp.handlers").capabilities,
+		on_attach = require("sarthak.lsp.lsp-config").on_attach,
+		capabilities = require("sarthak.lsp.lsp-config").capabilities,
 	}
 
+   -- individual server settings
+
+   -- note jsonls has the schema for all major type of json files if you want more then check the schema store
 	 if server.name == "jsonls" then
 	 	local jsonls_opts = require("sarthak.lsp.settings.jsonls")
 	 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)

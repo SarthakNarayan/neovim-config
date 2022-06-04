@@ -5,5 +5,5 @@ if not status_ok then
 end
 
 require("sarthak.lsp.lsp-installer")
-require("sarthak.lsp.handlers").setup()
+require("sarthak.lsp.diagnostic-config")
 require("sarthak.lsp.signature")
