@@ -51,6 +51,18 @@ nvim_tree.setup {
     require_confirm = true,
   },
 
+  -- icon cheatsheet : https://www.nerdfonts.com/cheat-sheet
+  renderer = {
+    icons = {
+      glyphs = {
+        folder = {
+          arrow_closed = "",
+          arrow_open = "",
+        },
+      },
+    },
+  },
+
   view = {
     width = 30,
     height = 30,

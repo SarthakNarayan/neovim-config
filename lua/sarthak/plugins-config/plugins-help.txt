@@ -25,5 +25,8 @@ Help for commands for plugins so that you don't have to look them up in the inte
 
 ## Null ls 
 - More to discover
-- Can use commands like LspInfo. If null-ls is attached to the session it will give information 
-- To see the supported and active ones use -> NullLsInfo
+- Can use commands like :LspInfo. If null-ls is attached to the session it will give information 
+- To see the supported and active ones use -> :NullLsInfo
+
+## Neoclip
+- To use with Telescope :Telescope neoclip
