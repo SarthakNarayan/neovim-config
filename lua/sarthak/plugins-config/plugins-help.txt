@@ -21,3 +21,9 @@ Help for commands for plugins so that you don't have to look them up in the inte
 ## nvim-tree
 - Discussions for using Trash (good for understanding functions)
   - https://github.com/kyazdani42/nvim-tree.lua/issues/279
+
+
+## Null ls 
+- More to discover
+- Can use commands like LspInfo. If null-ls is attached to the session it will give information 
+- To see the supported and active ones use -> NullLsInfo

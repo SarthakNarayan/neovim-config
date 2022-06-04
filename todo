@@ -1,4 +1,8 @@
 - Null ls not configured (not a good understanding)
 - Clipboard history, integrated with telescope
 - Remove white spaces at the end
+- Format on save
 - Learn vim recording 
+- What are registers in vim
+- What are buffers in vim
+

@@ -21,8 +21,7 @@ null_ls.setup {
     formatting.prettier,
     -- formatting.yapf,
 
-    -- Lua
-    formatting.stylua,
+    -- Lua, currently using the lsp sumenko_lua for formatting
+    -- formatting.stylua,
   },
 }
-

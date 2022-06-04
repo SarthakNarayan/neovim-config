@@ -94,7 +94,7 @@ return packer.startup(function(use)
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
   }
-  
+ 
   -- using bufferline
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
   use "moll/vim-bbye" -- complements bufferline for closing plugins
@@ -119,6 +119,9 @@ return packer.startup(function(use)
 
   -- alpha startup
   use "goolord/alpha-nvim"
+
+  -- neoclip, clipboard manager
+  use "AckslD/nvim-neoclip.lua"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

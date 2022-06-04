@@ -65,6 +65,7 @@ keymap("n","k","gk",opts)
 -- Copying to the system clipboard, one option is to set clipboard = unnamedplus
 -- But I don't want to litter my system clipboard with this so I have custom key mappings
 -- https://www.reddit.com/r/neovim/comments/jzlbsw/how_can_i_copy_text_from_nvim_to_system_clipboard/
+-- https://www.reddit.com/r/neovim/comments/3fricd/easiest_way_to_copy_from_neovim_to_system/
 -- Also I use CMD + V to paste from clipboard, I am doing this since for some reason I cannot copy using CMD + C
 -- This is also shared with vim clipboard
 keymap("n", "<leader>y", '"+yy', opts)
