@@ -1,9 +1,6 @@
--- Sets the capabilities and on_attach attributes
-
-local M = {}
-
--- lsp keymappings
-local function lsp_keymaps(bufnr)
+-- Setting up the on_attach function with keybindings as suggested in the official documentation
+-- https://github.com/neovim/nvim-lspconfig
+local on_attach = function(_, bufnr)
   local opts = { noremap = true, silent = true }
   -- all these functions mightnot be supported by that particular language server
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -29,14 +26,8 @@ local function lsp_keymaps(bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
--- exported to be used in lsp-installer
-M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
-  end
-  lsp_keymaps(bufnr)
-end
-
+-- Adding the cmp as a capability
+-- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -44,8 +35,44 @@ if not status_ok then
   return
 end
 
+capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
--- exported to be used in lsp-installer
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = {
+  'pyright',
+  'tsserver',
+  'sumneko_lua',
+  'jsonls',
+  'html',
+  'bashls',
+  'dockerls',
+  'gopls'
+}
 
-return M
+-- to know about settings for each server and options use LspInstallInfo and then use enter to go into server configurations
+for _, lsp in pairs(servers) do
+
+  local opts = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+
+   -- server specific configuration
+	 if lsp == "sumneko_lua" then
+	 	local jsonls_opts = require("sarthak.lsp.settings.sumneko_lua")
+	 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+	 end
+
+	 if lsp == "jsonls" then
+	 	local jsonls_opts = require("sarthak.lsp.settings.jsonls")
+	 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+	 end
+
+	 -- if lsp == "pyright" then
+	 -- 	local jsonls_opts = require("sarthak.lsp.settings.pyright")
+	 -- 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+	 -- end
+
+    require('lspconfig')[lsp].setup(opts)
+end

@@ -7,3 +7,4 @@ end
 require("sarthak.lsp.lsp-installer")
 require("sarthak.lsp.diagnostic-config")
 require("sarthak.lsp.signature")
+require("sarthak.lsp.lsp-config")
