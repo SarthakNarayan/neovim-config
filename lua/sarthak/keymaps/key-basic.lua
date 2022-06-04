@@ -62,6 +62,12 @@ keymap("n","N","Nzz",opts)
 keymap("n","j","gj",opts)
 keymap("n","k","gk",opts)
 
+-- Copying to the system clipboard, one option is to set clipboard = unnamedplus
+-- But I don't want to litter my system clipboard with this so I have custom key mappings
+-- https://www.reddit.com/r/neovim/comments/jzlbsw/how_can_i_copy_text_from_nvim_to_system_clipboard/
+-- Also I use CMD + V to paste from clipboard, I am doing this since for some reason I cannot copy using CMD + C
+-- This is also shared with vim clipboard
+keymap("n", "<leader>y", '"+yy', opts)
 
 
 -- ##########################################################################################
@@ -89,6 +95,9 @@ keymap("v", "<S-h>", "^", opts)
 -- remap esc in visual mode, you can either use this or press v 1 or 2 times depending on the visual or visual block mode
 keymap("v", "<leader>jk", "<ESC>", opts)
 
+-- copying to clipboard while in visual mode
+keymap("v", "<leader>y", '"+y', opts)
+
 
 
 -- ##########################################################################################
@@ -97,3 +106,4 @@ keymap("v", "<leader>jk", "<ESC>", opts)
 -- In command mode mappings to esc run the command for some odd historical vi compatibility reason. 
 -- We use the alternate method of existing which is Ctrl-C
 keymap("c", "jk", "<C-c>", opts)
+
