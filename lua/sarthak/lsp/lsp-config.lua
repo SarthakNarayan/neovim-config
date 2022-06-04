@@ -1,6 +1,6 @@
 -- Setting up the on_attach function with keybindings as suggested in the official documentation
 -- https://github.com/neovim/nvim-lspconfig
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true }
   -- all these functions mightnot be supported by that particular language server
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -9,12 +9,15 @@ local on_attach = function(_, bufnr)
   -- in some languages like python if you use it on import json then it will take you to the json package
   -- This may be available for all languages like it didn't work for me in java
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader><space>", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+
+  -- pressing it again will go inside the hover window if its large
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<space><space>", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 
   -- rename all the occurences of that function or variable
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
@@ -22,8 +25,16 @@ local on_attach = function(_, bufnr)
   -- find and next and previous diagnostis
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>m", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+
+  -- list all the diagnostics in a list in a pane below
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+
+  -- if tsserver is the lsp server then don't use its formatter for formatting, we will be using null ls
+  -- so if you see that your language server is colliding with null ls then disable it here
+  if client.name == "tsserver" then
+    client.resolved_capabilities.document_formatting = false
+  end
 end
 
 -- Adding the cmp as a capability

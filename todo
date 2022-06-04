@@ -1,3 +1,5 @@
 - Null ls not configured
 - How to copy from neovim to system clipboard
 - Clipboard history, integrated with telescope
+- Remove white spaces at the end
+- Learn vim recording 
