@@ -60,7 +60,7 @@ vim.opt.wrap = true
 vim.opt.fillchars = { eob = " " }
 
 -- scroll automatically when nearing the end of screen
-vim.opt.scrolloff = 10                           
+vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 

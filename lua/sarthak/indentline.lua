@@ -19,6 +19,7 @@ end
 indent.setup({
   show_current_context = true,
   show_current_context_start = true,
+  char = '┊',
   -- remove the colors if you don't want them
   -- char_highlight_list = {
   --   "IndentBlanklineIndent1",

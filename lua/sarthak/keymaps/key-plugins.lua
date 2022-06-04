@@ -19,9 +19,10 @@ keymap("", ",", "<Nop>", opts)
 
 
 -- telescope keymaps
-keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts) -- preview
+-- in the telescope.lua file
+-- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts) -- preview
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts) -- no preview
-keymap("n", "<leader>r", "<cmd>Telescope live_grep<cr>", opts) --ripgrep must be installed for this to work
+-- keymap("n", "<leader>r", "<cmd>Telescope live_grep<cr>", opts) --ripgrep must be installed for this to work
 
 -- comments
 -- gcc : comment toggling using linewise comment

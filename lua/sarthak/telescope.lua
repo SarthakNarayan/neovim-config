@@ -6,12 +6,24 @@ if not status_ok then
   return
 end
 
--- loading extensions
+-- ########################## EXTENSIONS ##########################
 -- telescope.load_extension('media_files') -- preview media files in telescope
 -- telescope.load_extension('notify') -- if you want to filter notify using telescope
+require('telescope').load_extension('fzf') -- enable native fzf for telescope
+
+-- ########################## SHORTCUTS ##########################
+vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files)
+-- if you don't want preview
+-- vim.keymap.set('n', '<leader>f', function()
+--   require('telescope.builtin').find_files { previewer = false }
+-- end)
+vim.keymap.set('n', '<leader>r', require('telescope.builtin').live_grep)
+-- if you want fuzzy find in the buffer
+-- vim.keymap.set('n', '<leader>ff', require('telescope.builtin').current_buffer_fuzzy_find)
 
 local actions = require "telescope.actions"
 
+-- ########################## SETUP ##########################
 telescope.setup {
   defaults = {
 
