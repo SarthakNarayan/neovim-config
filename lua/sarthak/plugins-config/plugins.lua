@@ -49,6 +49,7 @@ return packer.startup(function(use)
   -- Colorschemes
   use "lunarvim/colorschemes"
   use "ellisonleao/gruvbox.nvim"
+  use 'tiagovla/tokyodark.nvim'
 
    -- completion plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -77,6 +78,7 @@ return packer.startup(function(use)
     run = ":TSUpdate", -- running TSUpdate everytime this plugins is loaded
   }
   use "p00f/nvim-ts-rainbow" -- rainbow highlighter for parenthesis, configuration is in treesitter
+  use "windwp/nvim-ts-autotag" -- automatically close and update tags (like html, react etc)
 
   -- Autopairs plugin for automatically inserting surrounding brackets and qoutes
   use "windwp/nvim-autopairs"

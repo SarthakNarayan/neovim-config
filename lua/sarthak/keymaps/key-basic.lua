@@ -7,7 +7,7 @@
 --   term_mode = "t",
 --   command_mode = "c",
 
-local opts = { noremap = true, silent = true }
+local opts = { noremap = true, silent = true } -- silent = true means you won't see the command which ran
 local term_opts = { silent = true }
 
 -- Shorten function name

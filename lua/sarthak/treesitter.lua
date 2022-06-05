@@ -31,13 +31,21 @@ configs.setup {
     additional_vim_regex_highlighting = false, -- enabling it may slow down the editor
   },
 
+
+  -- ############################## PLUGINS ##############################
+  -- using autopairs plugin with treesitter
   autopairs = {
     enable = true,
   },
 
   indent = { enable = true, disable = { "yaml" } },
 
-  -- rainbow brackets highlighting plugin
+  -- automatically complete tags
+  autotag = {
+    enable = true,
+  },
+
+  -- rainbow brackets highlighting plugin, comes from plugin
   rainbow = {
     enable = true,
     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for

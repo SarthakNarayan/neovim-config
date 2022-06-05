@@ -60,6 +60,7 @@ cmp.setup {
   -- key mappings
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(), -- move up in menu
+    ["<S-Tab>"] = cmp.mapping.select_prev_item(), -- move up in menu
     ["<Tab>"] = cmp.mapping.select_next_item(), -- move down in menu
 		["<C-j>"] = cmp.mapping.select_next_item(), -- move down in menu
 

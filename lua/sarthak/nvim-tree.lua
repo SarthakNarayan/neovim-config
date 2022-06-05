@@ -41,7 +41,7 @@ nvim_tree.setup {
   },
 
   git = {
-    enable = false,
+    enable = true,
     ignore = true,
     timeout = 500,
   },
@@ -51,8 +51,20 @@ nvim_tree.setup {
     require_confirm = true,
   },
 
-  -- icon cheatsheet : https://www.nerdfonts.com/cheat-sheet
   renderer = {
+    -- highlight_opened_files = "all",
+    indent_markers = {
+      enable = true,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        item = "│ ",
+        none = "  ",
+      },
+    },
+
+    -- icons won't be used if indent markers are enabled
+    -- icon cheatsheet : https://www.nerdfonts.com/cheat-sheet
     icons = {
       glyphs = {
         folder = {
@@ -67,10 +79,10 @@ nvim_tree.setup {
     enable = true,
     show_on_dirs = false,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
     },
   },
 
