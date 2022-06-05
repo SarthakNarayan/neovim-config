@@ -35,6 +35,11 @@ local on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
+
+  -- using nullls for formatting, if you want to use gopls for formatting then comment these lines and remove null-ls formatting
+  if client.name == "gopls" then
+    client.resolved_capabilities.document_formatting = false
+  end
 end
 
 -- Adding the cmp as a capability
@@ -69,21 +74,21 @@ for _, lsp in pairs(servers) do
     capabilities = capabilities,
   }
 
-   -- server specific configuration
-	 if lsp == "sumneko_lua" then
-	 	local jsonls_opts = require("sarthak.lsp.settings.sumneko_lua")
-	 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-	 end
+  -- server specific configuration
+  if lsp == "sumneko_lua" then
+    local jsonls_opts = require("sarthak.lsp.settings.sumneko_lua")
+    opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+  end
 
-	 if lsp == "jsonls" then
-	 	local jsonls_opts = require("sarthak.lsp.settings.jsonls")
-	 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-	 end
+  if lsp == "jsonls" then
+    local jsonls_opts = require("sarthak.lsp.settings.jsonls")
+    opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+  end
 
-	 -- if lsp == "pyright" then
-	 -- 	local jsonls_opts = require("sarthak.lsp.settings.pyright")
-	 -- 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-	 -- end
+  -- if lsp == "pyright" then
+  -- 	local jsonls_opts = require("sarthak.lsp.settings.pyright")
+  -- 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+  -- end
 
-    require('lspconfig')[lsp].setup(opts)
+  require('lspconfig')[lsp].setup(opts)
 end

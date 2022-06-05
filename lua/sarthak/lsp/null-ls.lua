@@ -23,5 +23,8 @@ null_ls.setup {
 
     -- Lua, currently using the lsp sumenko_lua for formatting
     -- formatting.stylua,
+
+    -- Go
+    formatting.gofmt,
   },
 }
