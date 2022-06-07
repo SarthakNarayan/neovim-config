@@ -43,3 +43,19 @@ Help for commands for plugins so that you don't have to look them up in the inte
 
 ## Gitsigns
 - You can use line blame using :Gitsigns toggle_current_line_blame
+
+## Null-ls vs LSP
+- https://www.reddit.com/r/neovim/comments/t0af8y/what_is_the_purpose_of_nulllsnvim_ive_read_the/
+- Summary:
+What is the purpose of null-ls.nvim? I've read the README but I don't really understand what it gives me over a language server like clangd or jdtls? 
+It is not "over" other language serves. It is an addition. To complement the "main" servers. Every buffer/file can have many server connected to it.
+
+Null-ls takes advantage of a well specified and standardized interface, the language server protocol, and uses it to connect other tools to NeoVim that are not a language server itself but provide partially similar features. For example can language servers support the formatting provider as defined in the protocol. Now there is sometimes not the one formatter (think of Python or Go with formatters only for import sorting). Most language server don't re-implement a new formatter. They usually have an existing formatter as dependency themselves. Servers like for Python allow to become extended with modules to for example alternate the formatter or add multiple ones. But not all servers do have that. So the idea is that with Null-ls you can have your regular language server for all the basic stuff you expect. And then have some extra once which provide additional or complementary features. So you can use one of the two popular Python language servers with basically no formatting suppprt per default. And then use Null-ls to add black and isort. Via the language server protocol.
+
+In the past there where always many plugins to implement the connection to formatting, linting or task tools. Each of them had its own approach and standard. But now there is a widely adopted and well defined standard: the language server protocol. And NeoVim supports it natively. Null-ls is now just the bridge between NeoVims language client implementation and many standalone tools which can not act as server themselves.
+
+flake8 is not a language server, but can be run on code and report issues it finds. black is the same idea, but does formatting instead of reporting issues.
+
+null-ls is a language server, and provides common abstractions to run programs like these and provide responses to Neovim using their output. So instead of running black on your file, you can just request LSP formatting. Because null-ls is attached, it will pick up the request, see you have black configured for formatting, run it, and provide the changes back to Neovim so that the changes can be applied in an LSP-ish way. Same idea for flake8, but the server is the one in charge of pushing diagnostics to the client (null-ls to Neovim in this case), so it just runs flake8 periodically.
+
+The "kicker" is that null-ls runs in the same Neovim instance as the client itself. Other language servers are separate PIDs. This is my understanding, parts of it may be off a touch.
