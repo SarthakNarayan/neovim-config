@@ -55,6 +55,7 @@ local on_attach = function(client, bufnr)
 	lsp_highlight_document(client)
 
 	-- Key mappings when lsp server attaches to the server
+	-- If you want to fuzzy find through these diagnostics use the telescope commands
 	lsp_keymaps(bufnr)
 
 	-- if tsserver is the lsp server then don't use its formatter for formatting, we will be using null ls
