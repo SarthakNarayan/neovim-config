@@ -8,7 +8,7 @@ end
 
 -- ########################## EXTENSIONS ##########################
 -- telescope.load_extension('media_files') -- preview media files in telescope
--- telescope.load_extension('notify') -- if you want to filter notify using telescope
+--ke if I want to search the telescope docs  telescope.load_extension('notify') -- if you want to filter notify using telescope
 require("telescope").load_extension("fzf") -- enable native fzf for telescope
 require("telescope").load_extension("neoclip")
 
@@ -21,6 +21,10 @@ vim.keymap.set("n", "<leader>f", require("telescope.builtin").find_files)
 vim.keymap.set("n", "<leader>r", require("telescope.builtin").live_grep)
 -- if you want fuzzy find in the buffer
 -- vim.keymap.set('n', '<leader>ff', require('telescope.builtin').current_buffer_fuzzy_find)
+-- search the string (under the cursor) in the entire workspace
+vim.keymap.set("n", "<leader>s", require("telescope.builtin").grep_string)
+-- setting a key binding for neoclip
+vim.keymap.set("n", "<leader>c", "<cmd>Telescope neoclip<CR>")
 
 local actions = require("telescope.actions")
 

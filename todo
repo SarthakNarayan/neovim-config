@@ -2,4 +2,5 @@
 - What are registers in vim
 - What are buffers in vim
 - File browser in vim : https://github.com/nvim-telescope/telescope-file-browser.nvim
+- What are auto commands in vim
 - Packer lazy loading to decrease the startup time.

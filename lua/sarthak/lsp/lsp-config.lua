@@ -31,7 +31,11 @@ local function lsp_keymaps(bufnr)
 
 	-- rename all the occurences of that function or variable
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gR", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+
+	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	-- much better for viewing all the references if for some reason telescope is not working then uncomment the above line
+	-- insipiration from telescope-commands
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
@@ -57,6 +61,9 @@ local on_attach = function(client, bufnr)
 	-- Key mappings when lsp server attaches to the server
 	-- If you want to fuzzy find through these diagnostics use the telescope commands
 	lsp_keymaps(bufnr)
+
+	-- attaching aerial to lsp, if any issues are there then comment it
+	require("aerial").on_attach(client, bufnr)
 
 	-- if tsserver is the lsp server then don't use its formatter for formatting, we will be using null ls
 	-- so if you see that your language server is colliding with null ls then disable it here

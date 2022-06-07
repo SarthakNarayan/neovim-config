@@ -3,11 +3,13 @@ local commands_table = {
 	["Tsh"] = "search_history",
 	-- ["Tvo"] = "vim_options",
 	["Tcmd"] = "commands", -- list all the commands in neovim
-	["Thlp"] = "help_tags", -- get all the help docs
+	["Thlp"] = "help_tags", -- get all the help docs, amazing
 	-- ["Tkey"] = "keymaps",
 	["Tcol"] = "colorscheme",
 
-	["Tlrf"] = "lsp_references", -- cursor should be on the variable/function for which you want to find the references
+	-- cursor should be on the variable/function for which you want to find the references
+	-- amazing command mapped to gr in lsp-config.lua file
+	["Tlrf"] = "lsp_references",
 	["Tlds"] = "lsp_document_symbols",
 	["Tld"] = "diagnostics", -- get all the diagnostics
 	-- ["Tli"] = "lsp_implementations",

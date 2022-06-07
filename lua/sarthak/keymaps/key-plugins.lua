@@ -10,13 +10,12 @@ keymap("", ",", "<Nop>", opts)
 
 -- cmp
 -- tab, ctrl j,k to move forward and backward
--- ctrl + space for trigger and ctrl + e to close 
+-- ctrl + space for trigger and ctrl + e to close
 -- more information in the cmp.lua file
 
 -- Treesitter
 -- keymap("n", "<leader>rh", "<cmd>TSBufEnable highlight<cr>", opts) -- disabled since it was slowing down ripgrep
 -- enable highlighting if something goes wrong. rh stands for rehighlight
-
 
 -- telescope keymaps
 -- in the telescope.lua file
@@ -30,7 +29,7 @@ keymap("", ",", "<Nop>", opts)
 
 -- telescope
 -- All the basic stuff, can be found in telescope.lua file
--- Use q - after going to normal mode 
+-- Use q - after going to normal mode
 -- Thought of using <C-c> and <leader>w (similar to cmd + w) but wasn't very friendly
 
 -- nvim-tree
@@ -55,6 +54,9 @@ keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 -- :q closes the window and not the buffer
 keymap("n", "<leader>w", ":Bdelete!<CR>", opts) -- won't work without https://github.com/moll/vim-bbye plugin
 
+-- aerial key bindings
+vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle<CR>")
+
 -- toggle term
 -- <leader>t - mapped in toggleterm.lua
 
@@ -64,8 +66,6 @@ keymap("n", "<leader>w", ":Bdelete!<CR>", opts) -- won't work without https://gi
 -- comments
 -- gc : Toggles the region using linewise comment
 -- gb : Toggles the region using blockwise comment
-
-
 
 -- ##########################################################################################
 -- Insert mode

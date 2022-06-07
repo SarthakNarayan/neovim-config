@@ -124,8 +124,8 @@ return packer.startup(function(use)
 	-- neoclip, clipboard manager
 	use("AckslD/nvim-neoclip.lua")
 
-	-- test
-	use("onsails/lspkind.nvim")
+	-- aerial
+	use("stevearc/aerial.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
