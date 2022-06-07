@@ -11,7 +11,7 @@ local commands_table = {
 	-- amazing command mapped to gr in lsp-config.lua file
 	["Tlrf"] = "lsp_references",
 	["Tlds"] = "lsp_document_symbols",
-	["Tld"] = "diagnostics", -- get all the diagnostics
+	["Tld"] = "diagnostics", -- get diagnostics of all the buffers
 	-- ["Tli"] = "lsp_implementations",
 	-- ["Tldd"] = "lsp_definitions",
 
