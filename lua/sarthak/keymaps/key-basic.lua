@@ -55,12 +55,15 @@ keymap("n", "<S-j>", "10jzz", opts)
 keymap("n", "<S-g>", "Gzz", opts)
 
 -- Centre window while searching
-keymap("n","n","nzz",opts)
-keymap("n","N","Nzz",opts)
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
 
 -- move between lines if the lines are wrapped
-keymap("n","j","gj",opts)
-keymap("n","k","gk",opts)
+keymap("n", "j", "gj", opts)
+keymap("n", "k", "gk", opts)
+
+-- vertical split
+vim.keymap.set("n", "<leader>v", "<cmd>vsplit<CR>")
 
 -- Copying to the system clipboard, one option is to set clipboard = unnamedplus
 -- But I don't want to litter my system clipboard with this so I have custom key mappings
@@ -70,13 +73,10 @@ keymap("n","k","gk",opts)
 -- This is also shared with vim clipboard
 keymap("n", "<leader>y", '"+yy', opts)
 
-
 -- ##########################################################################################
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
-
-
 
 -- ##########################################################################################
 -- Visual --
@@ -99,12 +99,9 @@ keymap("v", "<leader>jk", "<ESC>", opts)
 -- copying to clipboard while in visual mode
 keymap("v", "<leader>y", '"+y', opts)
 
-
-
 -- ##########################################################################################
 -- Command Mode --
 -- Escape from command mode using jk
--- In command mode mappings to esc run the command for some odd historical vi compatibility reason. 
+-- In command mode mappings to esc run the command for some odd historical vi compatibility reason.
 -- We use the alternate method of existing which is Ctrl-C
 keymap("c", "jk", "<C-c>", opts)
-
