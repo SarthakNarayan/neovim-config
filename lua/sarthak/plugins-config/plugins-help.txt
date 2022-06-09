@@ -5,7 +5,10 @@ Help for commands for plugins so that you don't have to look them up in the inte
 - TSBufEnable highlight : to enable highlighting 
   - Can be mapped to (<leader>rh) so that it can be used if something goes wrong
 - TSBufToggle highlight : to toggle highlighting
-- If push comes to shove use this ":write | edit | TSBufEnable highlight"
+- If push comes to shove use these 
+  - :write | edit | TSBufEnable highlight
+  - :e
+  - :lua vim.treesitter.get_parser(0):parse() -> https://github.com/neovim/neovim/issues/16152
 - Link to documentation : https://github.com/nvim-treesitter/nvim-treesitter
 
 ## LSP
