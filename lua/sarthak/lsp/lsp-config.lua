@@ -99,7 +99,8 @@ end
 capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
+-- The servers that you want to use must be installed using LspInstallInfo and then added here
+-- LspInstallInfo won't setup the servers, after installing them they must be added here
 local servers = {
 	"pyright",
 	"tsserver",
@@ -109,6 +110,7 @@ local servers = {
 	"bashls",
 	"dockerls",
 	"gopls",
+	"yamlls",
 }
 
 -- to know about settings for each server and options use LspInstallInfo and then use enter to go into server configurations
@@ -120,8 +122,8 @@ for _, lsp in pairs(servers) do
 
 	-- server specific configuration
 	if lsp == "sumneko_lua" then
-		local jsonls_opts = require("sarthak.lsp.settings.sumneko_lua")
-		opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+		local luals_opts = require("sarthak.lsp.settings.sumneko_lua")
+		opts = vim.tbl_deep_extend("force", luals_opts, opts)
 	end
 
 	if lsp == "jsonls" then
@@ -129,10 +131,10 @@ for _, lsp in pairs(servers) do
 		opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
 	end
 
-	-- if lsp == "pyright" then
-	-- 	local jsonls_opts = require("sarthak.lsp.settings.pyright")
-	-- 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-	-- end
+	if lsp == "yamlls" then
+		local yamlls_opts = require("sarthak.lsp.settings.yamlls")
+		opts = vim.tbl_deep_extend("force", yamlls_opts, opts)
+	end
 
 	require("lspconfig")[lsp].setup(opts)
 end

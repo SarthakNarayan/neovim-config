@@ -7,7 +7,8 @@ Help for commands for plugins so that you don't have to look them up in the inte
 - TSBufToggle highlight : to toggle highlighting
 - If push comes to shove use these 
   - :write | edit | TSBufEnable highlight
-  - :e
+  - :e or :w :e
+    - Mapping -> https://www.reddit.com/r/neovim/comments/ot7bkp/broken_treesitter_highlight/ 
   - :lua vim.treesitter.get_parser(0):parse() -> https://github.com/neovim/neovim/issues/16152
 - Link to documentation : https://github.com/nvim-treesitter/nvim-treesitter
 
@@ -24,6 +25,7 @@ Help for commands for plugins so that you don't have to look them up in the inte
   - In my case I was editing a simple js file and only null-ls was being shown as Active lsp this was because my folder didn't have the required directory
     structure like the .gitignore or nodemodules folder etc.
   - https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver (see the root directory section)
+- LSP installer just installs the server, they have to be manually added in the lsp config
 
 ## nvim-tree
 - Discussions for using Trash (good for understanding functions)
