@@ -1,4 +1,5 @@
 - Learn vim recording 
+- Change git glyphs
 - What are registers in vim
 - What are buffers in vim
 - File browser in vim : https://github.com/nvim-telescope/telescope-file-browser.nvim
@@ -6,3 +7,4 @@
 - Vim advanced: autocommands 
 - how to use lua functions in neovim
 - How to use lua commands, like when to use cmd and all etc.
+- git commit spell check : https://www.adamalbrecht.com/blog/2019/10/21/spell-check-in-vim-for-markdown-and-git-commit-messages/

@@ -1,4 +1,5 @@
 -- To know the difference between lsp and null-ls read plugins-help sections
+-- Reference: https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
@@ -9,6 +10,8 @@ end
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
+-- Other built in features are: code action, hover and completion
+-- Reference: https://github.com/jose-elias-alvarez/null-ls.nvim#features
 
 -- For format on save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

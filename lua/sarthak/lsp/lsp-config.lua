@@ -111,6 +111,7 @@ local servers = {
 	"dockerls",
 	"gopls",
 	"yamlls",
+	"ltex", -- for git commits and markdown files, java must be installed for it to work
 }
 
 -- to know about settings for each server and options use LspInstallInfo and then use enter to go into server configurations
