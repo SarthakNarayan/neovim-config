@@ -72,3 +72,6 @@ vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle<CR>")
 -- telescope
 -- <leader>f to close the prompt, trying to make <leader>f as toggle
 -- It only works when you are in insert mode in the telescope prompt
+
+-- lsp signature
+-- <C-c> to toggle hint on and off
