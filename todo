@@ -1,9 +1,0 @@
-- Configure lualine status line according to theme and with all the goodness of evil line
-- Learn vim recording 
-- What are registers in vim
-- What are buffers in vim
-- File browser in vim : https://github.com/nvim-telescope/telescope-file-browser.nvim
-- Packer lazy loading to decrease the startup time.
-- Vim advanced: autocommands 
-- how to use lua functions in neovim
-- How to use lua commands, like when to use cmd and all etc.
