@@ -1,4 +1,8 @@
 -- Remember telescope is just a fuzzy finder
+-- Documentation : https://github.com/nvim-telescope/telescope.nvim/blob/master/doc/telescope.txt
+
+-- !!!!!! By default in telescope hidden files (example .git) and files ignored by .gitignore and .ignore are ignored !!!!!
+-- By default telescope doesn't exclude any folders from search, you don't see .git and node_modules folder is because of the above reason
 
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
@@ -8,12 +12,17 @@ end
 
 -- ########################## EXTENSIONS ##########################
 -- telescope.load_extension('media_files') -- preview media files in telescope
---ke if I want to search the telescope docs  telescope.load_extension('notify') -- if you want to filter notify using telescope
+-- telescope.load_extension('notify') -- if you want to filter notify using telescope
 require("telescope").load_extension("fzf") -- enable native fzf for telescope
 require("telescope").load_extension("neoclip")
 
 -- ########################## SHORTCUTS ##########################
 vim.keymap.set("n", "<leader>f", require("telescope.builtin").find_files)
+-- if you don't want telescope find files to ignore the .gitignore files
+-- vim.keymap.set("n", "<leader>f", function()
+-- 	require("telescope.builtin").find_files({ no_ignore = true })
+-- end)
+
 -- if you don't want preview
 -- vim.keymap.set('n', '<leader>f', function()
 --   require('telescope.builtin').find_files { previewer = false }
