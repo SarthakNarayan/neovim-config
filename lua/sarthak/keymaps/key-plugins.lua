@@ -38,7 +38,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- v : vertical split - mapping in nvim-tree.lua
 -- l,o : open the file (same as enter) - mapping in nvim-tree.lua
 -- useful defaults
--- R, S, H : Refresh, Search, Toggle Hidden files
+-- R, S, H/I : Refresh, Search, Toggle Hidden/Git ignored files
 -- a, d/D, r : Create (leaving a / will add a directory), disabled/trash a file (brew install trash) (on mac), Rename file/directories
 -- x, c, p : cut, copy paste
 -- y, gy : copy name, copy absolute path
