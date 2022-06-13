@@ -32,6 +32,9 @@ local sources = {
 
 	-- Go
 	formatting.gofmt,
+
+	-- Bash
+	formatting.shfmt,
 }
 
 null_ls.setup({
