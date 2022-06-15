@@ -57,6 +57,10 @@ keymap("n", "<leader>w", ":Bdelete!<CR>", opts) -- won't work without https://gi
 -- aerial key bindings
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle<CR>")
 
+-- trouble key bindings
+vim.keymap.set("n", "<leader>x", "<cmd>TroubleToggle<CR>") -- for the whole workspace
+vim.keymap.set("n", "gq", "<cmd>TroubleToggle loclist<CR>") -- for the local file
+
 -- toggle term
 -- <leader>t - mapped in toggleterm.lua
 
