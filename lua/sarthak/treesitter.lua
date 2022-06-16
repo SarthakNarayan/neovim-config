@@ -1,5 +1,6 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter
 
+-- if you all the parsers installed then just do :TSUninstall all
 local languages = {
 	"lua",
 	"java",
