@@ -130,6 +130,8 @@ return packer.startup(function(use)
 
 	-- trouble
 	use("folke/trouble.nvim")
+
+	-- wilder
 	use("gelguy/wilder.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
