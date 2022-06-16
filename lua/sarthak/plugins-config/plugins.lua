@@ -130,6 +130,7 @@ return packer.startup(function(use)
 
 	-- trouble
 	use("folke/trouble.nvim")
+	use("gelguy/wilder.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
