@@ -132,6 +132,10 @@ return packer.startup(function(use)
 	-- wilder
 	use("gelguy/wilder.nvim")
 
+	-- lf
+	use("ptzz/lf.vim")
+	use("voldikss/vim-floaterm")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

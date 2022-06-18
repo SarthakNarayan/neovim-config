@@ -47,8 +47,6 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- bufferline
 -- Navigate buffers
--- keymap("n", "<leader>l", ":bnext<CR>", opts)
--- keymap("n", "<leader>h", ":bprevious<CR>", opts)
 keymap("n", "<Tab>", ":bnext<CR>", opts)
 keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 -- :q closes the window and not the buffer
@@ -60,6 +58,9 @@ vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle<CR>")
 -- trouble key bindings
 vim.keymap.set("n", "<leader>x", "<cmd>TroubleToggle<CR>") -- for the whole workspace
 vim.keymap.set("n", "gq", "<cmd>TroubleToggle loclist<CR>") -- for the local file
+
+-- lf file manager
+vim.keymap.set("n", "<leader>l", "<cmd>Lfcd<CR>")
 
 -- toggle term
 -- <leader>t - mapped in toggleterm.lua
