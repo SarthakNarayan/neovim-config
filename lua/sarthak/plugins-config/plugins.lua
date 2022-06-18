@@ -84,8 +84,9 @@ return packer.startup(function(use)
 	-- Easy comments, default key bindings are good and are commented out in keymaps for reference
 	use("numToStr/Comment.nvim")
 
-	-- Git signs
+	-- Git
 	use("lewis6991/gitsigns.nvim")
+	use("sindrets/diffview.nvim")
 
 	-- nvim tree
 	use({
@@ -129,12 +130,12 @@ return packer.startup(function(use)
 	-- trouble
 	use("folke/trouble.nvim")
 
-	-- wilder
-	use("gelguy/wilder.nvim")
-
 	-- lf
 	use("ptzz/lf.vim")
 	use("voldikss/vim-floaterm")
+
+	-- seamless pane switching
+	use("christoomey/vim-tmux-navigator")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
