@@ -30,8 +30,10 @@ vim.keymap.set("n", "<leader>f", require("telescope.builtin").find_files)
 vim.keymap.set("n", "<leader>r", require("telescope.builtin").live_grep)
 -- if you want fuzzy find in the buffer
 -- vim.keymap.set('n', '<leader>ff', require('telescope.builtin').current_buffer_fuzzy_find)
+
 -- search the string (under the cursor) in the entire workspace
-vim.keymap.set("n", "<leader>s", require("telescope.builtin").grep_string)
+-- vim.keymap.set("n", "<leader>s", require("telescope.builtin").grep_string)
+
 -- setting a key binding for neoclip
 vim.keymap.set("n", "<leader>c", "<cmd>Telescope neoclip<CR>")
 

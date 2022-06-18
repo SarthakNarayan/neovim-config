@@ -77,6 +77,7 @@ keymap("n", "<leader>y", '"+yy', opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "JK", "<ESC>", opts)
 
 -- ##########################################################################################
 -- Visual --
