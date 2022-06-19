@@ -32,6 +32,7 @@ local sources = {
 
 	-- Go
 	formatting.gofmt,
+	-- diagnostics.staticcheck, -- https://staticcheck.io/docs/getting-started/
 
 	-- Bash
 	formatting.shfmt,
