@@ -124,9 +124,6 @@ return packer.startup(function(use)
 	-- neoclip, clipboard manager
 	use("AckslD/nvim-neoclip.lua")
 
-	-- aerial
-	use("stevearc/aerial.nvim")
-
 	-- trouble
 	use("folke/trouble.nvim")
 
@@ -136,6 +133,9 @@ return packer.startup(function(use)
 
 	-- seamless pane switching
 	use("christoomey/vim-tmux-navigator")
+
+	-- symbols-outline
+	use("simrat39/symbols-outline.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
