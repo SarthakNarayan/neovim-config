@@ -21,10 +21,12 @@
   - E.g.: `:%s/search goes here/replace goes here/gc` - search and replace in whole file and ask for confirmation for each replace
 
 ## Vim Recording
+
 - All the recorded macros are stored in registers
 - Tips
-  - Try going to the beginning of line using symbols, 
-  - Using search to jump to brackets or words, 
+
+  - Try going to the beginning of line using symbols,
+  - Using search to jump to brackets or words,
   - Try not to use h,j,k,l and other keys which might not be repeatable.
 
 - q<register> : to start the macro
@@ -34,9 +36,13 @@
 - 10@<register> : repeat the macro 10 times
 - :reg <register> : To view the contents of the register
 - To clear a single macro - record over it - with nothing.
+
   - Example qw, q : macro at register w will be overwritten
   - Or we can do `:let @<register> = ''`
 
-- What happens if you use `100@<name>` and there are only 50 lines 
+- What happens if you use `100@<name>` and there are only 50 lines
   - Vim will stop running recursive macros if there are no lines to run it on.
 
+## See the latest commands
+
+- q:

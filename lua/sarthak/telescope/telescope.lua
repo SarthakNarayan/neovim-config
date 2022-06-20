@@ -42,6 +42,9 @@ vim.keymap.set("n", "<leader>r", require("telescope.builtin").live_grep)
 -- setting a key binding for neoclip
 vim.keymap.set("n", "<leader>c", "<cmd>Telescope neoclip<CR>")
 
+-- command history in neovim, default mapped to telescope
+vim.keymap.set("n", "q:", require("telescope.builtin").command_history)
+
 local actions = require("telescope.actions")
 
 -- ########################## SETUP ##########################
