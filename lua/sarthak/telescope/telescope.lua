@@ -43,7 +43,9 @@ vim.keymap.set("n", "<leader>r", require("telescope.builtin").live_grep)
 vim.keymap.set("n", "<leader>c", "<cmd>Telescope neoclip<CR>")
 
 -- command history in neovim, default mapped to telescope
-vim.keymap.set("n", "q:", require("telescope.builtin").command_history)
+-- commenting since it made q slow in telescope window, making it a command
+-- vim.keymap.set("n", "q:", require("telescope.builtin").command_history)
+-- To use it run :Telescope builtin, then from that search command history
 
 local actions = require("telescope.actions")
 
