@@ -24,9 +24,9 @@ vim.keymap.set("n", "<leader>f", require("telescope.builtin").find_files)
 -- end)
 
 -- cheatesheet view
-vim.keymap.set("n", "<leader>cc", function()
-	require("telescope.builtin").find_files({ cwd = "$HOME/.config/cheatsheet" })
-end)
+-- vim.keymap.set("n", "<leader>cc", function()
+-- 	require("telescope.builtin").find_files({ cwd = "$HOME/.config/cheatsheet" })
+-- end)
 
 -- if you don't want preview
 -- vim.keymap.set('n', '<leader>f', function()

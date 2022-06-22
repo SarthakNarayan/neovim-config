@@ -85,15 +85,20 @@ local on_attach = function(client, bufnr)
 	end
 end
 
--- Adding the cmp as a capability
--- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+-- code folding capability for nvim-ufo (lua/sarthak/lsp/code-folding.lua)
+capabilities.textDocument.foldingRange = {
+	dynamicRegistration = false,
+	lineFoldingOnly = true,
+}
+
+-- Adding the cmp as a capability
+-- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
 	return
 end
-
 capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
