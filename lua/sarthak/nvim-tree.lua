@@ -109,10 +109,13 @@ nvim_tree.setup({
 				{ key = "h", cb = tree_cb("close_node") },
 				{ key = "v", cb = tree_cb("vsplit") },
 
-				-- to remove deletion using d
-				-- use D to delete, it will trash the files in mac, trash must be installed
-				-- brew install trash
-				{ key = "d", action = "" },
+				{ key = "D", action = "" },
+				{ key = "x", action = "" },
+				{ key = "c", action = "" },
+				{ key = "y", action = "copy" },
+				{ key = "p", action = "paste" },
+				{ key = "d", action = "cut" },
+				{ key = "T", action = "trash" },
 			},
 		},
 		number = false,

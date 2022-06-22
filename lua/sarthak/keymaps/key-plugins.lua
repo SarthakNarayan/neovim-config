@@ -23,14 +23,16 @@ keymap("", ",", "<Nop>", opts)
 
 -- ########## NVIM-TREE ##########
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- Added keybindings
 -- h : close nodes - mapping in nvim-tree.lua
 -- v : vertical split - mapping in nvim-tree.lua
 -- l,o : open the file (same as enter) - mapping in nvim-tree.lua
+-- d, y, p: cut, copy, paste (similar to vim and lf bindings)
+-- Advisable to use lf for moving things around because it has a clear selection button
+
 -- useful defaults
 -- R, S, H/I : Refresh, Search, Toggle Hidden/Git ignored files
--- a, d/D, r : Create (leaving a / will add a directory), disabled/trash a file (brew install trash) (on mac), Rename file/directories
--- x, c, p : cut, copy paste
--- y, gy : copy name, copy absolute path
+-- a,r : Create (leaving a / will add a directory), Rename file/directories
 -- W, E : collapse all, expand all
 -- Tab : preview the files without leaving the left hand side. If you use something like l,o,w then you will be put to the right hand side
 
