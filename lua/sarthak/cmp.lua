@@ -59,10 +59,10 @@ cmp.setup({
 
 	-- key mappings
 	mapping = {
-		["<C-k>"] = cmp.mapping.select_prev_item(), -- move up in menu
-		["<S-Tab>"] = cmp.mapping.select_prev_item(), -- move up in menu
-		["<Tab>"] = cmp.mapping.select_next_item(), -- move down in menu
-		["<C-j>"] = cmp.mapping.select_next_item(), -- move down in menu
+		["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }), -- move up in menu
+		["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }), -- move up in menu
+		["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }), -- move down in menu
+		["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }), -- move down in menu
 
 		-- scrolling through the docs that open on the righ side, can also be scrolled using mouse
 		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
@@ -121,5 +121,19 @@ cmp.setup({
 	experimental = {
 		ghost_text = false,
 		native_menu = false,
+	},
+})
+
+cmp.setup.cmdline(":", {
+	sources = {
+		{ name = "cmdline" },
+	},
+})
+
+-- search
+cmp.setup.cmdline("/", {
+	sources = {
+		-- { name = "buffer", max_item_count = 5 }, -- we can specify max item count if we don't want too many options
+		{ name = "buffer" },
 	},
 })

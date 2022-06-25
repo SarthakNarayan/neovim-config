@@ -83,6 +83,11 @@ local on_attach = function(client, bufnr)
 	if client.name == "jsonls" then
 		client.resolved_capabilities.document_formatting = false
 	end
+
+	-- using prettier (null ls) for formatting
+	if client.name == "html" then
+		client.resolved_capabilities.document_formatting = false
+	end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

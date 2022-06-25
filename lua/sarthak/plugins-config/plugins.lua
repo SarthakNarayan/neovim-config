@@ -55,6 +55,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-buffer") -- buffer completions
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp") -- lsp completions
+	use("hrsh7th/cmp-cmdline") -- command line completions
 
 	-- luasnip engine, compulsory in the setup of cmp.lua file
 	use("L3MON4D3/LuaSnip") -- snippet engine required for completion
