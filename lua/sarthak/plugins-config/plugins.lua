@@ -67,6 +67,8 @@ return packer.startup(function(use)
 	use("ray-x/lsp_signature.nvim") -- function signatures
 	use("jose-elias-alvarez/null-ls.nvim")
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }) -- code folding
+	use("simrat39/symbols-outline.nvim") -- show all the symbols, only useful if the lsp is working
+	use("stevearc/aerial.nvim") -- it can work either with treesitter or lsp
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -135,9 +137,6 @@ return packer.startup(function(use)
 
 	-- seamless pane switching
 	use("christoomey/vim-tmux-navigator")
-
-	-- symbols-outline
-	-- use("simrat39/symbols-outline.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

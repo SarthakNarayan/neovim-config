@@ -9,6 +9,7 @@ local commands_table = {
 	-- cursor should be on the variable/function for which you want to find the references
 	-- amazing command mapped to gr in lsp-config.lua file
 	["Tlrf"] = "lsp_references",
+	["Tds"] = "lsp_document_symbols",
 
 	-- replaced by trouble
 	-- ["Tld"] = "diagnostics", -- get diagnostics of all the buffers

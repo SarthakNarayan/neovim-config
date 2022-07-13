@@ -1,4 +1,5 @@
 -- https://github.com/simrat39/symbols-outline.nvim
+-- command :SymbolsOutline
 
 vim.g.symbols_outline = {
 	auto_preview = false,

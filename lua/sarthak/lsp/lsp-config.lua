@@ -63,6 +63,9 @@ local on_attach = function(client, bufnr)
 	-- If you want to fuzzy find through these diagnostics use the telescope commands
 	lsp_keymaps(bufnr)
 
+	-- setting up aerial to use lsp
+	-- require("aerial").on_attach(client, bufnr)
+
 	-- if tsserver is the lsp server then don't use its formatter for formatting, we will be using null ls
 	-- so if you see that your language server is colliding with null ls then disable it here
 	if client.name == "tsserver" then
