@@ -61,6 +61,19 @@ vim.keymap.set("n", "<leader>l", "<cmd>Lfcd<CR>")
 -- ########## TOGGLE TERM ##########
 -- <leader>t - mapped in toggleterm.lua
 
+-- ########## HOP ##########
+-- works for both normal and visual mode since we haven't specified any mode
+vim.keymap.set(
+	"",
+	"f",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+)
+vim.keymap.set(
+	"",
+	"F",
+	"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+)
+
 -- ##########################################################################################
 -- Visual mode
 
